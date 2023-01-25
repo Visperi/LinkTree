@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>AboutWindow.qml</file>
+        <file>../img/avatar.png</file>
+        <file>../img/github-mark.png</file>
+        <file>../img/linkedin_logo.png</file>
+        <file>../img/email_icon.png</file>
     </qresource>
 </RCC>
