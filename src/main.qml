@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls
 import QtQuick.Dialogs
+import QtQuick.Layouts
 
 Window {
     width: 350
@@ -20,14 +21,24 @@ Window {
         title: "External link opened"
         modal: true
         closePolicy: Popup.CloseOnEscape
+        property string lgpl3LicenseUrl: "https://www.gnu.org/licenses/lgpl-3.0.html"
 
+        GridLayout {
+            rowSpacing: 20
 
-        Text {
-            text: "An external link to LGPL license is about to be opened. Proceed?"
+            Text {
+                GridLayout.alignment: Qt.AlignCenter
+                text: "An external link to full LGPLv3 license is about to be opened."
+            }
+            Text {
+                GridLayout.row: 1
+                GridLayout.alignment: Qt.AlignCenter
+                text: "Proceed?"
+            }
         }
 
         standardButtons: Dialog.Ok | Dialog.Cancel
-        onAccepted: Qt.openUrlExternally("https://www.gnu.org/licenses/lgpl-3.0.html")
+        onAccepted: Qt.openUrlExternally(lgpl3LicenseUrl)
     }
 
     MenuBar {
