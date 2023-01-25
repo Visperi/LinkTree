@@ -49,11 +49,18 @@ Window {
             textFormat: Qt.RichText
             readOnly: true
             text: "Repository for this program can be found from " + repoHyperlink.text
+            onHoveredLinkChanged: if (hoveredLink)
+                                  {
+                                      ToolTip.show(repoHyperlink.url, 2000);
+                                  }
 
             MouseArea {
                 anchors.fill: parent
                 cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
-                onClicked: if (parent.hoveredLink) {Qt.openUrlExternally(repoHyperlink.url);}
+                onClicked: if (parent.hoveredLink)
+                           {
+                               Qt.openUrlExternally(repoHyperlink.url);
+                           }
             }
         }
     }
