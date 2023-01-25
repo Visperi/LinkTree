@@ -49,6 +49,7 @@ Window {
 
         MenuBar {
             Layout.alignment: Qt.AlignTop
+            Layout.fillWidth: true
             Layout.columnSpan: parent.columns
             Menu {
                 title: "File"
