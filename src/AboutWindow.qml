@@ -8,6 +8,11 @@ Window {
     flags: Qt.Dialog
     height: aboutDialogGrid.implicitHeight
     width: aboutDialogGrid.implicitWidth
+    minimumHeight: height
+    minimumWidth: width
+    maximumHeight: height
+    maximumWidth: width
+    modality: Qt.WindowModal
 
     GridLayout {
         id: aboutDialogGrid
@@ -16,6 +21,14 @@ Window {
 
         TextArea {
             GridLayout.row: 0
+            GridLayout.column: 0
+            Layout.alignment: Qt.AlignCenter
+            readOnly: true
+            text: "LinkTree 1.0"
+        }
+
+        TextArea {
+            GridLayout.row: 1
             GridLayout.column: 0
             Layout.alignment: Qt.AlignHCenter
             readOnly: true
@@ -30,7 +43,7 @@ Window {
                 visible: false
             }
 
-            GridLayout.row: 1
+            GridLayout.row: 2
             GridLayout.column: 0
             Layout.alignment: Qt.AlignCenter
             textFormat: Qt.RichText
