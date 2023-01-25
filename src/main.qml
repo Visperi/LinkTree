@@ -5,8 +5,8 @@ import QtQuick.Dialogs
 import QtQuick.Layouts
 
 Window {
-    width: 420
-    height: 280
+    width: 340
+    height: 230
     visible: true
     title: qsTr("LinkTree")
 
@@ -92,17 +92,35 @@ Window {
         }
 
         RowLayout {
+            id: linkRow
             Layout.row: 2
             Layout.column: 2
             Layout.columnSpan: 1
             Layout.alignment: Qt.AlignHCenter
+            spacing: 15
+
+            function toolTipEvent(element, text)
+            {
+                if (element.hoverEnabled)
+                {
+                    ToolTip.show(text, 2000);
+                }
+            }
 
             Image {
                 id: github_image
                 source: "img/github-mark"
                 Layout.preferredHeight: 32
                 Layout.preferredWidth: 32
-                Layout.alignment: Qt.AlignTop
+
+                MouseArea {
+                    property string url: "https://github.com/Visperi"
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onClicked: Qt.openUrlExternally(url)
+                    cursorShape: Qt.PointingHandCursor
+                    onHoveredChanged: linkRow.toolTipEvent(this, url)
+                }
             }
 
             Image {
@@ -110,6 +128,15 @@ Window {
                 source: "img/linkedin_logo"
                 Layout.preferredHeight: 32
                 Layout.preferredWidth: 32
+
+                MouseArea {
+                    property string url: "https://www.linkedin.com/in/niko-matasaho/"
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onClicked: Qt.openUrlExternally(url)
+                    cursorShape: Qt.PointingHandCursor
+                    onHoveredChanged: linkRow.toolTipEvent(this, url)
+                }
             }
 
             Image {
@@ -117,6 +144,15 @@ Window {
                 source: "img/email_icon"
                 Layout.preferredHeight: 32
                 Layout.preferredWidth: 32
+
+                MouseArea {
+                    property string url: "mailto:niko.matasaho@gmail.com"
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onClicked: Qt.openUrlExternally(url)
+                    cursorShape: Qt.PointingHandCursor
+                    onHoveredChanged: linkRow.toolTipEvent(this, url)
+                }
             }
         }
     }
