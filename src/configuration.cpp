@@ -9,7 +9,6 @@ Configuration::Configuration()
     std::string m_githubUrl;
     std::string m_linkedinUrl;
     std::string m_email;
-
 }
 
 Configuration::Configuration(const std::string& path): Configuration()
