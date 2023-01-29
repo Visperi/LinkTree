@@ -1,16 +1,22 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-
+#include "configuration.h"
 
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
-    QGuiApplication app(argc, argv);
 
+    Configuration configuration(":/config");
+    configuration.Load();
+
+    QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
+    QQmlContext* rootContext = engine.rootContext();
+    rootContext->setContextProperty("config", &configuration);
+
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
@@ -18,8 +24,6 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
     engine.load(url);
-
-//    QQmlContext* rootContext = engine.rootContext();
 
     return app.exec();
 }

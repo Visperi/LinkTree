@@ -6,5 +6,6 @@
         <file>../img/github-mark.png</file>
         <file>../img/linkedin_logo.png</file>
         <file>../img/email_icon.png</file>
+		<file>../config</file>
     </qresource>
 </RCC>
