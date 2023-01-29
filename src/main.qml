@@ -85,7 +85,7 @@ Window {
             }
 
             Text {
-                text: "Niko Mätäsaho"
+                text: config.name
                 font.pointSize: 12
                 font.bold: true
                 Layout.alignment: Qt.AlignHCenter
@@ -115,7 +115,7 @@ Window {
                 Layout.preferredWidth: 32
 
                 MouseArea {
-                    property string url: "https://github.com/Visperi"
+                    property string url: config.githubUrl
                     anchors.fill: parent
                     hoverEnabled: true
                     onClicked: Qt.openUrlExternally(url)
@@ -131,7 +131,7 @@ Window {
                 Layout.preferredWidth: 32
 
                 MouseArea {
-                    property string url: "https://www.linkedin.com/in/niko-matasaho/"
+                    property string url: config.linkedinUrl
                     anchors.fill: parent
                     hoverEnabled: true
                     onClicked: Qt.openUrlExternally(url)
@@ -147,7 +147,7 @@ Window {
                 Layout.preferredWidth: 32
 
                 MouseArea {
-                    property string url: "mailto:niko.matasaho@gmail.com"
+                    property string url: "mailto:" + config.email
                     anchors.fill: parent
                     hoverEnabled: true
                     onClicked: Qt.openUrlExternally(url)

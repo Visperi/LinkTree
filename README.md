@@ -14,10 +14,13 @@ I have some plans on improving this project which I may or may not implement in 
 
 This project *should* be cross-platform, as no platform specific components have been used as far as I know.
 
-## Compiling
+### Compiling
 
-To compile in Qt Creator, just clone the repository and open `CMakeLists.txt` in the editor. Source and required files are configured to be included automatically.
+To compile in Qt Creator, just clone the repository and open `CMakeLists.txt` in the editor and then build the project. Source and required files are configured to be included automatically.
 
+# Configuration
+
+`config` file in te repository root directory is embedded to the application executable, and can be used to configure information shown in the main window. The field names should be pretty self-explanatory. All fields support UTF-8 encoded text.
 
 # License
 

@@ -15,6 +15,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick)
 set(PROJECT_SOURCES
         src/main.cpp
         src/qml.qrc
+        src/configuration.h
+        src/configuration.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
