@@ -20,7 +20,7 @@ To compile in Qt Creator, just clone the repository and open `CMakeLists.txt` in
 
 # Configuration
 
-`config` file in te repository root directory is embedded to the application executable, and can be used to configure information shown in the main window. The field names should be pretty self-explanatory. All fields support UTF-8 encoded text.
+`config` file in the repository root directory is embedded to the application executable, and can be used to configure information shown in the main window. The field names should be pretty self-explanatory. All fields support UTF-8 encoded text.
 
 # License
 
